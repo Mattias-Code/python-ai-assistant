@@ -1,13 +1,10 @@
-import wave
-import sounddevice as sd
 import os
 import subprocess
-import time
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 MODEL = "meta-llama-3.1-8b-instruct-abliterated.Q4_K_M.gguf"
 CONTEXT_LENGTH = 2048
-THREADS = 4
+THREADS = 4 # Set to amount of physical cores.
 
 def get_response(prompt):
     command = [
